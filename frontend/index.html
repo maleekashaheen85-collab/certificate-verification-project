@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CVP Demo — Unique Theme</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <nav class="nav">
+    <a data-go="home" class="chip">Home</a>
+    <a data-go="verify" class="chip">Verify</a>
+    <a data-go="issuer" class="chip">Issuer</a>
+    <a data-go="admin" class="chip">Admin</a>
+    <a data-go="login" class="chip primary">Login</a>
+    <a data-reset class="chip ghost">Reset Data</a>
+  </nav>
+
+  <main id="pages">
+    <!-- Home -->
+    <section id="home" class="page active">
+      <h1>CVP Demo — Unique</h1>
+      <div class="grid">
+        <div class="card">
+          <h2>Hero</h2>
+          <p>Verify or issue certificates with on-chain proofs.</p>
+          <div class="row">
+            <button data-go="verify" class="chip primary">Verify a Certificate</button>
+            <button data-go="issuer" class="chip">Issue a Certificate</button>
+            <button data-go="login" class="chip">Login</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>How It Works</h2>
+          <ol>
+            <li>Issuers create and anchor certificate hash (mocked in UI).</li>
+            <li>Anyone can verify using ID/QR/hash.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Quick Verify</h3>
+          <input id="quickId" placeholder="CERT-2025-02060"/>
+          <button id="quickVerify" class="chip primary">Verify</button>
+        </div>
+        <div class="card">
+          <h3>Trust & Partners</h3>
+          <div class="tags"><span class="tag">Demo Partner</span></div>
+        </div>
+      </div>
+      <footer>Phase II – Frontend Demo (Unique Theme). All interactions are mocked (no backend).</footer>
+    </section>
+
+    <!-- Verify -->
+    <section id="verify" class="page">
+      <h1>Verify Certificate</h1>
+      <div class="grid">
+        <div class="card">
+          <label>ID or Hash</label>
+          <input id="verifyId" placeholder="CERT-2025-02060"/>
+          <button id="btnVerify" class="chip primary">Verify</button>
+        </div>
+        <div class="card">
+          <h2>Result</h2>
+          <div id="verifyResult" class="pill pill-muted">Waiting…</div>
+          <hr/>
+          <h3>Tips</h3>
+          <p>Use the ID printed on the certificate or the on-chain hash.</p>
+        </div>
+      </div>
+      <footer>Phase II – Frontend Demo. All interactions are mocked (no backend).</footer>
+    </section>
+
+    <!-- Issuer -->
+    <section id="issuer" class="page">
+      <h1>Issue Certificate</h1>
+      <div class="grid">
+        <div class="card">
+          <label>Holder Name</label>
+          <input id="holder"/>
+          <label>Student/ID</label>
+          <input id="student"/>
+          <label>Program</label>
+          <input id="program"/>
+          <label>Grade</label>
+          <select id="grade">
+            <option>Excellent</option><option>Very Good</option>
+            <option>Good</option><option>Acceptable</option>
+          </select>
+          <label>Issue Date</label>
+          <input id="issueDate" type="date"/>
+          <label>Upload Electronic Copy</label>
+          <input id="file" type="file"/>
+          <div class="row">
+            <button id="genHash" class="chip">Generate Hash & QR</button>
+            <button id="submit" class="chip primary">Submit</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Preview</h2>
+          <pre id="preview"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admin -->
+    <section id="admin" class="page">
+      <h1>Certificates</h1>
+      <div class="grid">
+        <div class="card">
+          <table id="tbl"></table>
+          <footer>Phase II – Frontend Demo (Unique Theme). All interactions are mocked (no backend).</footer>
+        </div>
+        <div class="card">
+          <h2>Actions</h2>
+          <div class="row">
+            <button class="chip primary" id="newCert">New Certificate</button>
+            <button class="chip" id="bulk">Bulk Upload (.csv)</button>
+          </div>
+          <h3>Notifications</h3>
+          <p>Nothing pending.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login -->
+    <section id="login" class="page">
+      <h1>Login</h1>
+      <div class="card">
+        <label>Email</label>
+        <input placeholder="issuer@login.com"/>
+        <label>Password</label>
+        <input type="password"/>
+        <div class="row">
+          <button class="chip primary">Sign In</button>
+          <button class="chip">Create Account</button>
+        </div>
+        <div class="row">
+          <button class="chip ghost">Connect Wallet (mock)</button>
+        </div>
+      </div>
+      <footer>Phase II – Frontend Demo (Unique Theme). All interactions are mocked (no backend).</footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
