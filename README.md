@@ -1,4 +1,11 @@
+https://youtu.be/4oFA4c3seCc رابط فيديو الشرح على اليوتيوب
+
+
+
+
+
 # Certificate Verification Platform (Final Submission)
+
 
 This repository contains **all phases** of the project:
 - Phase I — Analysis & sketches (wireframes) *(docs)*
